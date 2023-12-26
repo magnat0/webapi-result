@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы</title>
+    <link rel="stylesheet" href="static/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1 class="title">
+            Сервис по оценке курсов от партнеров ИРИТ-РТФ
+        </h1>
+    </header>
+    <main>
+        <div class="crud_content">
+            <button id="deleteButton" class="btn btn-outline-danger">Удаление курса</button>
+            <ol id="courses_delete" style="display: none;"></ol>
+            <button id="showFormButton" class="btn btn-outline-primary">Добавить курс</button>
+            <button id="hideFormButton" style="display: none;" class="btn btn-outline-secondary">Скрыть форму</button>
+            <form id="courseForm" action="" style="display: none;">
+                <div class="mb-3">
+                    <label for="courseName" class="form-label">Название курса:</label>
+                    <input type="text" id="courseName" name="courseName" class="form-control" required >
+                </div>
+                <div class="mb-3">
+                    <label for="courseDescription" class="form-label">Описание курса:</label>
+                    <textarea id="courseDescription" name="courseDescription" class="form-control" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="organizerName" class="form-label">Название организатора:</label>
+                    <input type="text" id="organizerName" name="organizerName", value="Неизвестно" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="isActive" class="form-check-label">Активный курс:</label>
+                    <input type="checkbox" id="isActive" name="isActive" class="form-check-input">
+                </div>
+                <input type="submit" value="Отправить" class="btn btn-primary">
+        </form>
+        </div>
+        <div class="main_content">
+            <ul id="courses" class="list-courses"></ul>
+        </div>
+    </main>
+    <div class="documentaion">
+        <h3>Документация к сайту</h3>
+        <ul>
+            <li><strong>Добавление курса:</strong>на главной странице нажмите на кнопку "Добавить курс", после чего появиться форма
+                для создания добавления курса.
+            </li>
+            <li><strong>Удаление курса:</strong> на главной странице нажмите на кнопку "Удаление курса", после чего появиться список всех курсов,
+                представленных на сайте. Для удаления нужно нажать на нужный курс в этом списке. Пользователям, которые находились 
+                на странице удаленного курса будет показано соответсвующее предупреждение и будет произведен переход на главную страницу.
+                Также при удалении курса будут удалены и все связанные с ним комментарии.
+            </li>
+            <li><strong>Переход на страницу курса:</strong> на главной странице в правой части изображены "карточки" курсов, при нажатий на которые
+                будет произведен переход на страницку выбранного курса.
+            </li>
+            <li><strong>Изменение данных о курсе:</strong> на странице выбранного курса справа имеется форма для изменения данных.
+                При ее заполнении информация измениться на странице курса и главной странице.
+            </li>
+            <li><strong>Добавление комментария:</strong> на странице курса снизу есть раздел "Комментарии студентов" и в правой части есть форма для
+                написания комментария. После написания комментария и нажатия кнопки "Оттправить" комментарий будет добавлен в список,
+                находящийся слева от формы добавления комментария.
+            </li>
+            <li><strong>Удаление комментария:</strong> справа от комментария есть кнопка "Удалить", при нажатии на которую комментарий будет удален</li>
+            <li><strong>Изменение комментария:</strong> при нажатии на текст комментария, находящегося в списке комментариев, появиться форма для изменения
+                данного комментария. Также появятся кнопки "Отправить" и "Закрыть". При нажатии на кнопку "Отправить" текст комментария будет
+                изменен. При нажатии кнопки "Закрыть" форма для изменения комментария закроется.
+            </li>
+            <li><strong>Возврат на главную страницу:</strong> на странице курса сверху расположена кнопка "назад", при нажатии на
+            которую будет произведен возврат на главную страницу</li>
+        </ul>
+    </div>
+    <script>
+        var http_protocol = "{{ http_protocol }}";
+        var ws_protocol = "{{ ws_protocol }}";
+        var server_run = "{{ server_run }}";
+    </script>
+    <script src="/static/src/main.js"></script>
+</body>
+</html>

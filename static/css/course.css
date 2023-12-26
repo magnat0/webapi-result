@@ -1,0 +1,86 @@
+.title{
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
+header a{
+    text-decoration: none;
+}
+
+main{
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.course-content{
+    display: flex;
+    justify-content: space-around;
+}
+
+.comment-content h3{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.course-main{
+    width: 60%;
+    word-wrap: break-word;
+}
+
+.course-crud{
+    width: 40%;
+}
+
+#comments{
+    list-style: none;
+}
+
+#comments li{
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+#comments li span{
+    cursor: pointer;
+    display: block;
+    width: 400px;
+    word-wrap: break-word;;
+    white-space: normal;;
+}
+
+#comments li textarea{
+    width: 500px;
+}
+
+#comments li span:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out; 
+}
+
+#comments li button{
+    width: 100px;
+    height: 40px;
+}
+
+.comment-crud{
+    display: flex;
+}
+
+.comment-crud ul{
+    width: 70%;
+    margin: 0;
+}
+
+.comment-crud form{
+    width: 30%;
+}
+
+p#course_description, p#organizerName, p#isActive{
+    font-size: 18px;
+}
